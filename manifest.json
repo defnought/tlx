@@ -1,35 +1,37 @@
 {
-  "description": "Limit the number of tabs that can be opened",
-  "homepage_url": "https://github.com/gebirgsbaerbel/max-tabs-limit",
-  "manifest_version": 2,
-  "name": "MaxTabsLimit",
-  "permissions": [
-    "tabs",
-    "notifications",
-    "storage"
-  ],
   "background": {
-    "scripts": ["background.js"]
-  },
-  "icons": {
-    "32": "tab.svg"
+    "page": "index.html"
   },
   "browser_action": {
     "browser_style": true,
-    "default_title": "Max Tabs Limit",
+    "default_title": "TLX - Tab Limiter eXtended",
     "default_icon": {
-        "32": "tab.svg"
+        "48": "logo.svg",
+				"96": "logo.svg"
     }
   },
-  "version": "1.23",
   "browser_specific_settings": {
     "gecko": {
       "strict_min_version": "57.0a1"
     }
   },
+  "description": "Limit the number of open tabs",
+  "homepage_url": "https://github.com/defnought/tlx#readme",
+  "icons": {
+    "48": "logo.svg",
+		"96": "logo.svg"
+  },
+  "manifest_version": 2,
+  "name": "TLX - Tab Limiter eXtended",
   "options_ui": {
     "page": "options.html",
     "browser_style": true,
     "chrome_style": true
-  }
+  },
+  "permissions": [
+    "tabs",
+    "notifications",
+    "storage"
+  ],
+  "version": "1.0.0"
 }

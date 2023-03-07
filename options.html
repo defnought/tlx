@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8"/>
   </head>
 
   <body>
-    <form>
-      <hr/>
+    <form name="preferencesForm">
       <div>
-        <label>Max Tabs</label>
-        <input type="number" id="maxTabs"/>
+        <label>Tab Limit</label>
+        <input type="number" id="tabLimit"/>
       </div>
-      <hr/>
+      <br/>
       <div>
-        <button type="submit">Save</button>
+        <label for="limit-strategy">Limit Strategy</label>
+
+        <select name="limit-strategy" id="limitStrategy">
+          <option value="no-new-tabs">No new tabs</option>
+          <option value="remove-least-recently-accessed-tab">Remove least recently accessed tab</option>
+          <option value="remove-most-recently-accessed-tab">Remove most recently accessed tab</option>
+          <option value="remove-first-tab">Remove first tab (as they appear visually)</option>
+          <option value="remove-last-tab">Remove last tab (as they appear visually)</option>
+        </select> 
+      </div>
+      <br/>
+      <div>
+        <label for="limit-scope">Limit scope</label>
+        <select name="limit-scope" id="limitScope">
+          <option value="all-windows">All windows (will include private windows)</option>
+          <option value="active-window">Active window</option>
+        </select>
+      </div>
+      <br/>
+      <div>
+        <label for="notify">Show notifications when limiting is applied</label>
+        <input type="radio" name="shouldNotify" id="showNotifications" value="true"/>
+        <label for="showNotifications">Yes</label>
+        <input type="radio" name="shouldNotify" id="hideNotifications" value="false"/>
+        <label for="hideNotifications">No</label>
+      </div>
+      <br/>
+      <div>
+        <button type="submit">Save Preferences</button>
       </div>
     </form>
+
+    <script src="utils.js"></script>
     <script src="options.js"></script>
   </body>
 </html>
